@@ -25,6 +25,9 @@ class Uyap:
     #mailru api key
     mailgun_key = ''
 
+    #the api link
+    mailgun_api_link = ''
+
 
     #How many count you have?
     case_count = 1
@@ -46,6 +49,7 @@ class Uyap:
         self.mail_from = os.getenv('MAIL_FROM')
         self.mail_to = os.getenv('MAIL_TO')
         self.mailgun_key = os.getenv('MAILGUN_KEY')
+        self.mailgun_api_link = os.getenv('MAILGUN_API_LINK')
       
         #Set browser
         self.browser = webdriver.Chrome(Uyap.driver_path)
@@ -105,7 +109,7 @@ class Uyap:
     def sent_an_email(self, text):
        
         return requests.post(
-            "https://api.mailgun.net/v3/sandboxc229ce117fa54977a27d09fb0bb4d6a6.mailgun.org/messages",
+            self.mailgun_api_link,
             auth=("api", self.mailgun_key),
             data={"from": self.mail_from,
                 "to": "Yusuf Caliskan <"+self.mail_to+">",

@@ -1,10 +1,12 @@
 # Details
 
-Developers in Turkey, especially those who stand with socialism, are not only dealing with problems with the coding but also, before everything, we have a problem like freedom which is caused by the government's racist policy. Each of us has various lawsuits that we need to follow the status of them. 
- 
-Sometimes it could take time to control and observe one by one. This small python that I named "Ugly Boy" will help you to take off the load.
+Hi, I wrote a Python crawler...
 
-The scripts going to "Uyap" web site, and loging with your information than sending you an e-mail.
+Developers in Turkey, especially those who stand with socialism, are not only dealing with problems related to code but also, before everything, we have a common problem like freedom which is caused by the government's policy...
+
+Occasionally it could take time to control and observe the whole permitted cases one by one. This small python that I named "Ugly Boy" will help you to take off the load.
+
+The script simply goes to "Uyap" website, logging with the information, and then sends you an e-mail.
 
 ## Installation
 The only thing that you should do, downloads the requirements.
@@ -12,6 +14,7 @@ The only thing that you should do, downloads the requirements.
 `` pip install -r requirements.txt ``
 
 Set the .env file
+
 ``USER_NAME = 'your-tr-no:'``
 
 ``USER_PASSWORD = 'e-devlet password'``
