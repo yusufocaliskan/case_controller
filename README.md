@@ -9,3 +9,21 @@ The scripts going to "Uyap" web site, and loging with your information than send
 ## Installation
 The only thing that you should do, downloads the requirements.
 
+`` pip install -r requirements.txt ``
+
+Set the .env file
+``
+    USER_NAME = 'your-tr-no:'
+    USER_PASSWORD = 'e-devlet password'
+
+    MAIL_FROM = 'an-email'
+    MAIL_TO = 'an-email'
+    MAILRU_KEY = 'mail-ru-api-key'
+``
+
+save it as .env
+
+Than run the uyap.py
+`` python3 uyap.py ``
+
+The result will be sent you to in the mail that sets MAIL_TO
