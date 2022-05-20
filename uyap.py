@@ -114,7 +114,7 @@ class Uyap:
             data={"from": self.mail_from,
                 "to": "Yusuf Caliskan <"+self.mail_to+">",
                 "subject": "Rewşa Doza te:",
-                "text": "Ev mail otomatîk tê ji ter. Rewşa doza te : \n"+text})
+                "text": text})
 
 
 
