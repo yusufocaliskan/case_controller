@@ -13,10 +13,10 @@ The only thing that you should do, downloads the requirements.
 
 Set the .env file
 ``USER_NAME = 'your-tr-no:'
-USER_PASSWORD = 'e-devlet password'
-MAIL_FROM = 'an-email'
-MAIL_TO = 'an-email'
-MAILGUN_KEY = 'mail-ru-api-key'
+    USER_PASSWORD = 'e-devlet password'
+    MAIL_FROM = 'an-email'
+    MAIL_TO = 'an-email'
+    MAILGUN_KEY = 'mail-ru-api-key'
 ``
 
 save it as .env
