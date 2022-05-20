@@ -12,12 +12,12 @@ The only thing that you should do, downloads the requirements.
 `` pip install -r requirements.txt ``
 
 Set the .env file
-``USER_NAME = 'your-tr-no:'
-    USER_PASSWORD = 'e-devlet password'
-    MAIL_FROM = 'an-email'
-    MAIL_TO = 'an-email'
-    MAILGUN_KEY = 'mail-ru-api-key'
-``
+``USER_NAME = 'your-tr-no:'``
+``USER_PASSWORD = 'e-devlet password'``
+``MAIL_FROM = 'an-email'``
+``MAIL_TO = 'an-email'``
+``MAILGUN_KEY = 'mail-ru-api-key'``
+
 
 save it as .env
 
