@@ -113,7 +113,7 @@ class Uyap:
             auth=("api", self.mailgun_key),
             data={"from": self.mail_from,
                 "to": "Yusuf Caliskan <"+self.mail_to+">",
-                "subject": "Rewşa Doza te:",
+                "subject": "An e-mail from ugly boy",
                 "text": text})
 
 
