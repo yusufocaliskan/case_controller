@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import requests
+from dotenv import load_dotenv
+import os
 
 class Uyap:
 
@@ -14,15 +16,37 @@ class Uyap:
     #Password
     password = ''
 
+    #e-mail from
+    mail_from = ''
+
+    #mail_to
+    mail_to = ''
+
+    #mailru api key
+    mailru_key = ''
+
+
     #How many count you have?
-    case_count = '1'
+    case_count = 1
 
     #-Should I bring all the case to you?
     #-Set it True if it is yes..
     bring_all = False
 
     def __init__(self):
-        
+
+        #Load the env
+        load_dotenv()
+
+        #User
+        self.username = os.getenv('USER_NAME')
+        self.password = os.getenv('USER_PASSWORD')
+
+        #Email..
+        self.mail_from = os.getenv('MAIL_FROM')
+        self.mail_to = os.getenv('MAIL_TO')
+        self.mailru_key = os.getenv('MAILRU_KEY')
+      
         #Set browser
         self.browser = webdriver.Chrome(Uyap.driver_path)
 
@@ -54,8 +78,6 @@ class Uyap:
 
         time.sleep(7)
 
-        #tbody = self.browser.find_element_by_xpath('//tbody/tr[1]/td[6]').text
-        #table_row = self.browser.find_elements_by_tag_name("tr")
         i = 0
         message_body = []
         while i < self.case_count:
@@ -81,11 +103,12 @@ class Uyap:
 
 
     def sent_an_email(self, text):
+       
         return requests.post(
             "https://api.mailgun.net/v3/sandboxc229ce117fa54977a27d09fb0bb4d6a6.mailgun.org/messages",
-            auth=("api", "7780264ca6ad1717e52700321d970fca-5e7fba0f-f9e46322"),
-            data={"from": "<rawaax90@gmail.com>",
-                "to": "Yusuf Caliskan <yusufocaliskan@gmail.com>",
+            auth=("api", self.mailru_key),
+            data={"from": self.mail_from,
+                "to": "Yusuf Caliskan <"+self.mail_to+">",
                 "subject": "Rewşa Doza te:",
                 "text": "Ev mail otomatîk tê ji ter. Rewşa doza te : \n"+text})
 
@@ -97,9 +120,5 @@ class Uyap:
         #self.browser.close()
 
 app = Uyap()
-
-app.username= 28844464482
-app.password = 'Ma5ik33ysi45'
 app.case_count = 4
-
 app.signIn()
